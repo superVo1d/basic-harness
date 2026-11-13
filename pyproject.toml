@@ -1,0 +1,35 @@
+[tool.ruff]
+line-length = 88
+fix = true
+
+[tool.ruff.lint]
+select = ["E", "F"]
+# The formatter does not split string literals, so a long string stays one line.
+ignore = ["E501"]
+
+[tool.ruff.lint.isort]
+combine-as-imports = true
+
+[tool.autopep8]
+max_line_length = 88
+
+[tool.pylint.format]
+max-line-length = 88
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agent-loop"
+version = "0.1.0"
+dependencies = [
+    "aiofiles>=25.1.0",
+    "aiohttp>=3.14.5",
+    "openai",
+    "pydantic-settings>=2.16.2",
+    "tavily-python>=0.8.5",
+]
+
+[tool.setuptools]
+packages = ["agent"]
